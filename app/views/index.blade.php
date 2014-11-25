@@ -93,20 +93,25 @@
 
     <a href="" style="color:blue">Like</a>
     <hr>
-    <form>
+    @if(count(getCommentsFromPost($post->id)) > 0)
+    @foreach(getCommentsFromPost($post->id) as $comment)
+      {{ $comment->comment }}
+    @endforeach
+    @endif
+    {{ Form::open(['name' => 'comment_form', 'route' => ['users.comment']]) }}
       <div class="form-group">
-
-        <input type="text" class="form-control" placeholder="Add a comment..">
-
-      </form>
+        <input type="hidden" name="post_id" class="form-control" value="{{ $post->id }}">
+        <input type="text" name="comment" class="form-control" placeholder="Add a comment..">
       </div>
+    {{ Form::close() }}
 
-    </div>
+
   </div>
-  @endforeach
-  @else
-  <h1>No Posts Available</h1>
-  @endif
+</div>
+@endforeach
+@else
+<h1>No Posts Available</h1>
+@endif
 
 
 

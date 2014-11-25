@@ -30,3 +30,5 @@ Route::post('signin', ['as' => 'users.signin', 'uses' => 'UsersController@postSi
 Route::get('logout', ['as' => 'users.logout', 'uses' => 'UsersController@logout']);
 
 Route::post('post_status', ['as' => 'users.post_status', 'uses' => 'PostsController@store']);
+
+Route::post('post_comment', ['as' => 'users.comment', 'uses' => 'CommentController@store']);
