@@ -13,7 +13,9 @@
 
 Route::get('/', function()
 {
-	return View::make('index');
+	$posts = Post::with('user')->where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->get();
+
+	return View::make('index')->withPosts($posts);
 });
 
 
@@ -26,3 +28,5 @@ Route::get('signin', ['as' => 'users.signin', 'uses' => 'UsersController@getSign
 Route::post('signin', ['as' => 'users.signin', 'uses' => 'UsersController@postSignin']);
 
 Route::get('logout', ['as' => 'users.logout', 'uses' => 'UsersController@logout']);
+
+Route::post('post_status', ['as' => 'users.post_status', 'uses' => 'PostsController@store']);
