@@ -24,9 +24,9 @@
           
             <!-- main right col -->
             <div class="column col-sm-12 col-xs-12 col-lg-12" id="main">
-                
-              @include('partials._navbar')
               
+              @yield('navbar')
+
                @yield('content')
                
             </div>

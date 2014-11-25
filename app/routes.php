@@ -15,3 +15,8 @@ Route::get('/', function()
 {
 	return View::make('index');
 });
+
+
+Route::get('register', function(){
+	return View::make('registration');
+});

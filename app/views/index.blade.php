@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('navbar')
+  @include('partials._navbar')
+@stop
+
 @section('content')
 <div class="padding">
   <div class="full col-sm-9">
