@@ -17,6 +17,12 @@ Route::get('/', function()
 });
 
 
-Route::get('register', function(){
-	return View::make('registration');
-});
+Route::get('registration', ['as' => 'users.registration', 'uses' => 'UsersController@getRegistration']);
+
+Route::post('registration', ['as' => 'users.registration', 'uses' => 'UsersController@postRegistration']);
+
+Route::get('signin', ['as' => 'users.signin', 'uses' => 'UsersController@getSignin']);
+
+Route::post('signin', ['as' => 'users.signin', 'uses' => 'UsersController@postSignin']);
+
+Route::get('logout', ['as' => 'users.logout', 'uses' => 'UsersController@logout']);

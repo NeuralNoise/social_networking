@@ -33,11 +33,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
           <ul class="dropdown-menu">
-            <li><a href="">More</a></li>
-            <li><a href="">More</a></li>
-            <li><a href="">More</a></li>
-            <li><a href="">More</a></li>
-            <li><a href="">More</a></li>
+            <li><a href="{{ URL::route('users.logout') }}">logout</a></li>
           </ul>
         </li>
       </ul>
